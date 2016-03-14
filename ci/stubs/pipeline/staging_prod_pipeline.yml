@@ -1,0 +1,16 @@
+---
+pipeline:
+  main_template: template-repo/ci/templates/staging-prod/pipeline_main_template.yml
+  groups:
+    - name: Staging
+      template: template-repo/ci/templates/staging-prod/pipeline_staging_template.yml
+      environments:
+      - name: Staging1
+    - name: Production
+      template: template-repo/ci/templates/staging-prod/pipeline_prod_template.yml
+      trigger_job_template: template-repo/ci/templates/staging-prod/trigger_job_prod.yml
+      environments:
+      - name: East1
+      - name: East4
+      - name: West1
+      - name: West3

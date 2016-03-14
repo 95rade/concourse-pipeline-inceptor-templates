@@ -1,0 +1,19 @@
+---
+pipeline:
+  main_template: template-repo/ci/templates/tryanything-staging-prod/pipeline_main_template.yml
+  groups:
+    - name: Try-Anything
+      template: template-repo/ci/templates/tryanything-staging-prod/pipeline2_try_anything_template.yml
+      environments:
+      - name: TryAnything
+    - name: Staging
+      template: template-repo/ci/templates/tryanything-staging-prod/pipeline2_staging_template.yml
+      trigger_job_template: template-repo/ci/templates/tryanything-staging-prod/trigger_job_staging.yml
+      environments:
+      - name: Staging
+    - name: Production
+      template: template-repo/ci/templates/tryanything-staging-prod/pipeline_prod_template.yml
+      trigger_job_template: template-repo/ci/templates/tryanything-staging-prod/trigger_job_prod.yml
+      environments:
+      - name: East1
+      - name: West3
