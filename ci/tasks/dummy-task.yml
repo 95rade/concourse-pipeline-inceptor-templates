@@ -1,0 +1,11 @@
+---
+platform: linux
+
+image: docker:///kidikarus/cf-cli
+
+inputs:
+  - name: template-repo
+
+run:
+  path: template-repo/ci/tasks/dummy-task.sh
+
