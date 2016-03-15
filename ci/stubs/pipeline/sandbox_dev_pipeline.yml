@@ -1,0 +1,19 @@
+---
+pipeline:
+  main_template: template-repo/ci/templates/sandbox-dev/pipeline_main_template.yml
+  groups:
+    - name: SandBox
+      template: template-repo/ci/templates/sandbox-dev/pipeline_sandbox_template.yml
+      environments:
+      - name: SandBox
+    - name: Dev
+      template: template-repo/ci/templates/sandbox-dev/pipeline_dev_template.yml
+      trigger_job_template: template-repo/ci/templates/sandbox-dev/trigger_dev.yml
+      environments:
+      - name: Dev
+    # - name: Production
+    #   template: template-repo/ci/templates/tryanything-staging-prod/pipeline_prod_template.yml
+    #   trigger_job_template: template-repo/ci/templates/tryanything-staging-prod/trigger_job_prod.yml
+    #   environments:
+    #   - name: East1
+    #   - name: West3
