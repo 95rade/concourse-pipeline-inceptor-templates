@@ -5,7 +5,7 @@ pipeline:
     - name: SandBox
       template: template-repo/ci/templates/tryanything-staging-prod/pipeline2_try_anything_template.yml
       environments:
-      - name: TryAnything
+      - name: SandBox
     - name: Staging
       template: template-repo/ci/templates/tryanything-staging-prod/pipeline2_staging_template.yml
       trigger_job_template: template-repo/ci/templates/tryanything-staging-prod/trigger_job_staging.yml
