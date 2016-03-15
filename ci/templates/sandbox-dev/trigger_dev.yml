@@ -1,5 +1,5 @@
 
-- name: trigger-prod
+- name: trigger-dev
   plan:
   - aggregate:
     - get: template-repo
