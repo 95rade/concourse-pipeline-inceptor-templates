@@ -3,7 +3,7 @@
   - aggregate:
     - get: template-repo
       trigger: true
-      passed: [trigger-prod]
+      passed: [trigger-dev]
   - task: dummy-task
     file: template-repo/ci/tasks/dummy-task.yml
 
