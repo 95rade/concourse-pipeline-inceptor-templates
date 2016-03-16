@@ -1,0 +1,10 @@
+---
+platform: linux
+
+image: docker:///silval/ubuntu-bosh-spruce-cf-fly
+
+inputs:
+  - name: template-repo
+
+run:
+  path: template-repo/ci/tasks/dummy-task.sh
