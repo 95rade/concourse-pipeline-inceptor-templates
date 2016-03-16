@@ -1,0 +1,9 @@
+
+- name: {{trigger_name}}
+  plan:
+  - aggregate:
+    - get: template-repo
+      trigger: false
+      passed: [acceptance-tests-{{env_id}}]
+  - task: dummy-task
+    file: inceptor-repo/ci/tasks/dummy-task.yml
