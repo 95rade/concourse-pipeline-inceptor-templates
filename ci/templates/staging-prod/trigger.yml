@@ -6,4 +6,4 @@
       trigger: false
       passed: [acceptance-tests-{{env_id}}]
   - task: dummy-task
-    file: inceptor-repo/ci/tasks/dummy-task.yml
+    file: template-repo/ci/tasks/dummy-task.yml
