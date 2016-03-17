@@ -13,10 +13,9 @@
   public: true
   serial: true
   plan:
-  - aggregate:
-    - get: template-repo
-      trigger: true
-      passed: [deploy-{{env_id}}]
+  - get: template-repo
+    trigger: true
+    passed: [deploy-{{env_id}}]
   - task: dummy-task
     file: template-repo/ci/tasks/dummy-task.yml
 
@@ -24,9 +23,8 @@
   public: true
   serial: true
   plan:
-  - aggregate:
-    - get: template-repo
-      trigger: true
-      passed: [smoke-tests-{{env_id}}]
+  - get: template-repo
+    trigger: true
+    passed: [smoke-tests-{{env_id}}]
   - task: dummy-task
     file: template-repo/ci/tasks/dummy-task.yml
